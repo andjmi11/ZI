@@ -1,0 +1,86 @@
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\appsettings.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.staticwebassets.runtime.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.exe
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.deps.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.runtimeconfig.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.pdb
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.csproj.AssemblyReference.cache
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.AssemblyInfoInputs.cache
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.AssemblyInfo.cs
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.csproj.CoreCompileInputs.cache
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.RazorAssemblyInfo.cache
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.RazorAssemblyInfo.cs
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.18247ChatApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.build.18247ChatApp.props
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.18247ChatApp.props
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.18247ChatApp.props
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\bundle\18247ChatApp.styles.css
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\projectbundle\18247ChatApp.bundle.scp.css
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.csproj.CopyComplete
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\refint\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.pdb
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.genruntimeconfig.cache
+C:\Users\AndjelijaMijajlovic\Desktop\elfak\Zastita informacija projekat\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\ref\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\appsettings.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.staticwebassets.runtime.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.exe
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.deps.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.runtimeconfig.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\18247ChatApp.pdb
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.csproj.AssemblyReference.cache
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.AssemblyInfoInputs.cache
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.AssemblyInfo.cs
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.csproj.CoreCompileInputs.cache
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.RazorAssemblyInfo.cache
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.RazorAssemblyInfo.cs
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.18247ChatApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.build.18247ChatApp.props
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.18247ChatApp.props
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.18247ChatApp.props
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\bundle\18247ChatApp.styles.css
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\scopedcss\projectbundle\18247ChatApp.bundle.scp.css
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.csproj.CopyComplete
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\refint\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.pdb
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\18247ChatApp.genruntimeconfig.cache
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\obj\Debug\net7.0\ref\18247ChatApp.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\AndjelijaMijajlovic\Downloads\18247Zadatak2 (1)\18247Zadatak1\18247Zadatak1\bin\Debug\net7.0\MimeTypesMap.dll

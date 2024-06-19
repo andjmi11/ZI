@@ -1,0 +1,350 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@using Models
+@using Algorithms
+@using Microsoft.Extensions.Configuration
+@inject NavigationManager NavigationManager
+@inject IConfiguration Config 
+
+@implements IAsyncDisposable
+
+<div class="container overflow-auto shadow-sm p-3 mb-5 bg-white rounded" style="height: 500px;">
+    @if (!userMessages.Any())
+    {
+        <p>No messages yet, start chatting!</p>
+    }
+
+    @foreach (var userMessage in userMessages)
+    {
+        <div class="row mb-3 d-flex @(userMessage.CurrentUser ? "justify-content-end" : "")">
+            <div class="card shadow @(userMessage.CurrentUser ? "color-green mr-5" : "ml-5")" style="width: 18rem;">
+                <div class="card-header">
+                    @(userMessage.CurrentUser ? "You" : userMessage.Username)
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item @(userMessage.CurrentUser ? "color-green" : "")">@userMessage.Message</li>
+                    @if (encryptedFlag)
+                    {
+                        <li class="list-group-item custom-encrypted-message">@userMessage.EncryptedMessage</li>
+                    }
+                    @if (!string.IsNullOrEmpty(userMessage.FilePath))
+                    {
+                        <li class="list-group-item">
+                            <a href="@userMessage.FilePath" download>Download File</a>
+                        </li>
+                    }
+                </ul>
+                <div class="card-footer">
+                    <span class="small">@userMessage.DateSent.ToString("HH:mm | MMM dd")</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="container">
+    @if (isSelected)
+    {
+        <div class="alert alert-info" role="alert">
+            Now using encryption with @selectedAlgorithm
+        </div>
+    }
+    <div class="row">
+        <div class="col-3">
+            <input @bind="usernameInput" type="text" class="form-control" placeholder="Your name" readonly="@isUserReadonly" />
+        </div>
+        <div class="col-6">
+            @if (fileByteArray.Length == 0)
+            {
+                <textarea @bind="messageInput" class="form-control" placeholder="Start typing..."></textarea>
+            }
+            <InputFile OnChange="@HandleFileUpload" />
+        
+        </div>
+        <div class="col-3">
+            @if (fileByteArray.Length == 0)
+            {
+                <button @onclick="Send" disabled="@(!IsConnected)" class="btn btn-primary">Send file</button> 
+                <button @onclick="ToggleMessage" class="btn @(encryptedFlag ?  "btn-danger" : "btn-success")">
+                    @((encryptedFlag ? "OFF" : "ON"))
+                </button>
+            }
+            else
+            {
+                <button @onclick="SendFile" disabled="@(!IsConnected)" class="btn btn-primary">Send</button>
+                
+            }
+            <select @bind="selectedAlgorithm" class="form-select mt-2" disabled="@isSelected">
+                <option value="RC6">RC6</option>
+                <option value="Bifid">Bifid</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string selectedAlgorithm = "RC6";
+    private bool encryptedFlag = false;
+    private List<int> blankoSpaces = null;
+
+    private HubConnection hubConnection;
+    private List<UserMessage> userMessages = new();
+    private string usernameInput;
+    private string messageInput;
+    private bool isUserReadonly = false;
+
+    private char[][] keyBifid;
+    private int period;
+    private BifidCipher bifidCipher;
+    private RC6OFB rc6;
+
+    private bool isSelected = false;
+    public bool IsConnected => hubConnection.State == HubConnectionState.Connected;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
+            .Build();
+
+        LoadBifid();
+        LoadRC6();
+
+        hubConnection.On<string, string, List<int>, string>("ReceiveMessage", (user, message, blanko, alg) =>
+        {
+            isSelected = true;
+            selectedAlgorithm = alg;
+            string decryptedMessage = "";
+            if (alg == "RC6")
+            {
+                byte[] byteMess = Convert.FromBase64String(message);
+                byte[] decrypedMessageByte = rc6.Decrypt(byteMess);
+                decryptedMessage = System.Text.Encoding.UTF8.GetString(decrypedMessageByte);
+            }
+            else
+            {
+                decryptedMessage = bifidCipher.Decrypt(message, blanko);
+            }
+            userMessages.Add(new UserMessage { Username = user, Message = decryptedMessage, EncryptedMessage = message, CurrentUser = user == usernameInput, DateSent = DateTime.Now });
+
+            InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On<string, string, byte[], string>("ReceiveFile", (user, encryptedFile, hash, alg) =>
+        {
+            ReceiveFile(user, encryptedFile, hash, alg);
+            InvokeAsync(StateHasChanged);
+        });
+
+        await hubConnection.StartAsync();
+
+
+
+    }
+
+    private async Task Send()
+    {
+        if (!string.IsNullOrEmpty(usernameInput) && !string.IsNullOrEmpty(messageInput))
+        {
+            string encryptedMessage = "";
+            if (selectedAlgorithm == "RC6")
+            {
+                byte[] byteMess = System.Text.Encoding.UTF8.GetBytes(messageInput);
+
+                byte[] encrypedMessageByte = rc6.Encrypt(byteMess);
+                encryptedMessage = Convert.ToBase64String(encrypedMessageByte);
+            }
+            else
+            {
+                (blankoSpaces, encryptedMessage) = bifidCipher.Encrypt(messageInput);
+            }
+
+            await hubConnection.SendAsync("SendMessage", usernameInput, encryptedMessage, blankoSpaces, selectedAlgorithm);
+
+            isUserReadonly = true;
+            messageInput = string.Empty;
+            isSelected = true;
+
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+    private void ToggleMessage()
+    {
+        encryptedFlag = !encryptedFlag;
+    }
+
+    private void LoadBifid()
+    {
+        string[][] keyBifidJson = Config.GetSection("KeyBifid").Get<string[][]>()!;
+        int period = Config.GetSection("Period").Get<int>()!;
+        blankoSpaces = new List<int>();
+
+        keyBifid = new char[keyBifidJson.Length][];
+        for (int i = 0; i < keyBifidJson.Length; i++)
+        {
+            keyBifid[i] = new char[keyBifidJson[i].Length];
+            for (int j = 0; j < keyBifidJson[i].Length; j++)
+                keyBifid[i][j] = keyBifidJson[i][j][0];
+        }
+        bifidCipher = new BifidCipher(keyBifid, period);
+    }
+
+    private void LoadRC6()
+    {
+        //RC6
+        string keyRC6Json = Config.GetSection("KeyRC6").Get<string>()!;
+        string IVJson = Config.GetSection("IV").Get<string>()!;
+
+        int numKey = keyRC6Json.Length;
+        int numIV = IVJson.Length;
+
+        byte[] bytesKeyRC6 = new byte[numKey / 2];
+        byte[] bytesIV = new byte[numIV / 2];
+        for (int i = 0; i < numKey; i += 2)
+            bytesKeyRC6[i / 2] = Convert.ToByte(keyRC6Json.Substring(i, 2), 16);
+
+        for (int i = 0; i < numIV; i += 2)
+            bytesIV[i / 2] = Convert.ToByte(IVJson.Substring(i, 2), 16);
+        rc6 = new RC6OFB(bytesKeyRC6, bytesIV);
+    }
+
+
+    private byte[] fileByteArray = Array.Empty<byte>();
+    private string encryptedFileByteArray = "";
+    private byte[] blakeHash = null;
+    private bool isFileEncrypted = false;
+    private string receivedFileMessage = "";
+    private string fileExtension;
+
+    private async Task HandleFileUpload(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            using var memoryStream = new MemoryStream();
+            await file.OpenReadStream().CopyToAsync(memoryStream);
+            fileByteArray = memoryStream.ToArray();
+
+            fileExtension = Path.GetExtension(file.Name).TrimStart('.');
+        }
+    }
+
+    private (Blake, ulong[], ulong[]) LoadBlake()
+    {
+        IConfiguration configuration = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json")
+        .Build();
+
+        Blake blake = new Blake(configuration);
+
+
+        ulong[] salt = configuration.GetSection("Salt").Get<ulong[]>()!;
+        ulong[] counter = configuration.GetSection("Counter").Get<ulong[]>()!;
+
+        return (blake, salt, counter);
+    }
+
+    private void CalculateBlakeHash()
+    {
+        (Blake blake, ulong[] salt, ulong[] counter) = LoadBlake();
+
+        blakeHash = blake.ComputeHash(fileByteArray, salt, counter);
+    }
+
+    private bool ValidateBlakeHash(byte[] expectedHash, string decryptedFile)
+    {
+        (Blake blake, ulong[] salt, ulong[] counter) = LoadBlake();
+
+        byte[] computedHash = blake.ComputeHash(System.Text.Encoding.UTF8.GetBytes(decryptedFile), salt, counter);
+        return expectedHash.SequenceEqual(computedHash);
+    }
+
+    private void EncryptFile()
+    {
+        if (selectedAlgorithm == "RC6")
+        {
+            byte[] encrypedMessageByte = rc6.Encrypt(fileByteArray);
+            encryptedFileByteArray = Convert.ToBase64String(encrypedMessageByte);
+
+        }
+        else
+        {
+            string message = System.Text.Encoding.UTF8.GetString(fileByteArray);
+            (blankoSpaces, encryptedFileByteArray) = bifidCipher.Encrypt(message);
+
+
+        }
+    }
+
+    private string DecryptFile(string alg, string message, List<int> blanko)
+    {
+        string decryptedMessage = "";
+        if (alg == "RC6")
+        {
+            byte[] byteMess = Convert.FromBase64String(message);
+            byte[] decrypedMessageByte = rc6.Decrypt(byteMess);
+            decryptedMessage = System.Text.Encoding.UTF8.GetString(decrypedMessageByte);
+        }
+        else
+        {
+            decryptedMessage = bifidCipher.Decrypt(message, blanko);
+        }
+
+        return decryptedMessage;
+
+    }
+
+    private async Task SendFile()
+    {
+        if (fileByteArray.Length > 0 && !string.IsNullOrEmpty(usernameInput))
+        {
+            EncryptFile();
+            isFileEncrypted = true;
+            CalculateBlakeHash();
+
+            await hubConnection.SendAsync("SendFile", usernameInput, encryptedFileByteArray, blakeHash, selectedAlgorithm);
+
+
+            ClearFileData();
+        }
+    }
+
+    private void ReceiveFile(string user, string encryptedFile, byte[] expectedHash, string alg)
+    {
+        string decryptedFile = DecryptFile(alg, encryptedFile, new List<int>());
+        string filePath = null;
+        if (ValidateBlakeHash(expectedHash, decryptedFile))
+        {
+            receivedFileMessage = $"Received file from {user}. Click to download.";
+
+            string fileName = $"{user}_{DateTime.Now:yyyyMMddHHmmss}.{fileExtension}";
+            filePath = Path.Combine("Saved files", fileName);
+            File.WriteAllText(filePath, decryptedFile);
+        }
+        else
+        {
+            receivedFileMessage = $"Received file from {user}, but it failed hash validation.";
+        }
+
+        userMessages.Add(new UserMessage { Username = user, Message = receivedFileMessage, EncryptedMessage = " " , CurrentUser = user == usernameInput, DateSent = DateTime.Now, FilePath = filePath });
+
+    }
+
+    private void ClearFileData()
+    {
+        fileByteArray = Array.Empty<byte>();
+        encryptedFileByteArray = "";
+        blakeHash = null;
+    }
+
+    
+}
